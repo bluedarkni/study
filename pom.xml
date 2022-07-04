@@ -44,6 +44,7 @@
         <module>algorithm</module>
         <module>monitor</module>
         <module>distribute-tx</module>
+        <module>canal-demo</module>
     </modules>
 	<name>study</name>
 	<description>Demo project for Spring Boot</description>
