@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.nijunyang.mysql.enums.Month;
 import com.nijunyang.mysql.enums.Week;
 import com.nijunyang.mysql.myclass.MyList;
-import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 
 import java.time.Instant;
@@ -15,21 +14,15 @@ import java.time.Instant;
  * @date:2019/7/3
  */
 @Data
-@Schema
 public class User {
 
     private int id;
-    @Schema(description = "商城图片",example = "http://xxxxx")
     private String userName;
-    @Schema(description = "商城图片",example = "http://xxxxx")
     private String userCard;
-    @Schema(description = "商城图片",example = "http://xxxxx")
     private int age;
-    @Schema(description = "商城图片",example = "http://xxxxx")
     private String city;
 
     @JsonFormat(timezone = "GMT+8")
-    @Schema(description = "开始时间",example = "yyyy-MM-dd HH:mm:ss")
     private Instant createTime;
 
     private MyList<Week> cycle;

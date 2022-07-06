@@ -5,8 +5,6 @@ import com.nijunyang.mysql.enums.Month;
 import com.nijunyang.mysql.enums.Week;
 import com.nijunyang.mysql.model.User;
 import com.nijunyang.mysql.myclass.MyList;
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,14 +19,12 @@ import org.springframework.web.bind.annotation.RestController;
  * Created by nijunyang on 2020/2/4 17:40
  */
 @RestController
-@Tag(name = "测试时间")
 public class TestController {
 
     @Autowired
     UserDao userDao;
 
     @PostMapping("test/time")
-    @Operation(summary = "测试")
     public ResponseEntity<User> test (@RequestBody User user) {
         System.out.println(user.getCreateTime());
         userDao.insert(user);

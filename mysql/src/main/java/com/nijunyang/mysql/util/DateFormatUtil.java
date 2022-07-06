@@ -3,7 +3,6 @@ package com.nijunyang.mysql.util;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.time.FastDateFormat;
 
-import javax.validation.constraints.NotNull;
 import java.text.ParseException;
 import java.time.Instant;
 import java.util.Date;
@@ -55,7 +54,7 @@ public class DateFormatUtil {
      * @return
      * @throws ParseException
      */
-    public static Date pareDate(@NotNull String pattern, @NotNull String dateString) throws ParseException {
+    public static Date pareDate( String pattern, String dateString) throws ParseException {
         return FastDateFormat.getInstance(pattern).parse(dateString);
     }
 
@@ -65,7 +64,7 @@ public class DateFormatUtil {
      * @return
      * @throws ParseException
      */
-    public static Date pareDate(@NotNull String dateString) throws ParseException {
+    public static Date pareDate( String dateString) throws ParseException {
         String source = dateString.trim();
         if (StringUtils.isNotBlank(source)) {
             if(source.matches(DATE_REGEX_YYYYMM)){
