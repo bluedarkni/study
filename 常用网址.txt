@@ -1,3 +1,4 @@
+apache开源软件下载：https://archive.apache.org/dist/
 Redis官网：https://redis.io/download
 Redis 操作指令：http://redisdoc.com/
 Redis中文网：https://www.redis.net.cn/order/
