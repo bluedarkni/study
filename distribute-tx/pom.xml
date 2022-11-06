@@ -19,6 +19,7 @@
 <!--        <spring-cloud-alibaba.version>2.1.1.RELEASE</spring-cloud-alibaba.version>-->
         <spring-cloud-alibaba.version>2.2.5.RELEASE</spring-cloud-alibaba.version>
 <!--        <spring-boot.version>2.1.17.RELEASE</spring-boot.version>-->
+        <spring-boot.version>2.3.11.RELEASE</spring-boot.version>
     </properties>
     <modules>
         <module>tx-common</module>

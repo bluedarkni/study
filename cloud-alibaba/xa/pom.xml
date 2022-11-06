@@ -7,7 +7,6 @@
         <artifactId>cloud-alibaba</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <groupId>com.nijunyang</groupId>
     <artifactId>xa</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>xa</name>

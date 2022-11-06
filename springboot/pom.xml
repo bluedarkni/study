@@ -24,6 +24,9 @@
 		<module>retry</module>
 		<module>security</module>
 		<module>shiro</module>
+		<module>autoconfig</module>
+		<module>autoconfiguration-starter-test</module>
+		<module>starter</module>
 	</modules>
 
 	<dependencies>
