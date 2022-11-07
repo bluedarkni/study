@@ -17,6 +17,7 @@
     </properties>
     <modules>
         <module>hadoop</module>
+        <module>flink</module>
     </modules>
 
     <dependencies>
