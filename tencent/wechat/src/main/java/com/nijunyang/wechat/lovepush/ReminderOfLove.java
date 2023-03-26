@@ -1,4 +1,4 @@
-package com.nijunyang.wechat.pubsub;
+package com.nijunyang.wechat.lovepush;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Scheduled;

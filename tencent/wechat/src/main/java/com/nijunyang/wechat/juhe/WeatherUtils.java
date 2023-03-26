@@ -1,14 +1,10 @@
-package com.nijunyang.wechat.weather;
+package com.nijunyang.wechat.juhe;
 
 import cn.hutool.core.net.URLEncodeUtil;
 import cn.hutool.http.HttpUtil;
-import com.alibaba.fastjson2.JSONArray;
 import com.alibaba.fastjson2.JSONObject;
 
-import java.net.URLDecoder;
 import java.nio.charset.Charset;
-
-import static javax.swing.UIManager.get;
 
 
 /**
@@ -19,8 +15,6 @@ public class WeatherUtils {
 
 
     private static String url = "http://apis.juhe.cn/simpleWeather/query?city=%s&key=c5c06a749e4e2fc1f5dbe57efce673ad";
-
-    private static String key = "c5c06a749e4e2fc1f5dbe57efce673ad";
 
 
     public static void main(String[] args) {

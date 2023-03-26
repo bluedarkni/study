@@ -1,4 +1,4 @@
-package com.nijunyang.wechat.pubsub;
+package com.nijunyang.wechat.lovepush;
 
 import cn.hutool.core.date.DateUnit;
 import cn.hutool.core.date.DateUtil;
@@ -6,10 +6,15 @@ import cn.hutool.core.date.Week;
 import cn.hutool.http.HttpUtil;
 import cn.hutool.json.JSONUtil;
 import com.alibaba.fastjson2.JSONObject;
-import com.nijunyang.wechat.weather.WeatherUtils;
+import com.nijunyang.wechat.juhe.ChickenSoupUtils;
+import com.nijunyang.wechat.pubsub.WechatMsgTemplateMRequest;
+import com.nijunyang.wechat.util.DateUtils;
+import com.nijunyang.wechat.juhe.WeatherUtils;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -39,6 +44,9 @@ public class WechatApp {
     private static String myOpenId = "oSrPm5pct_BDqhKBjlAO5_BKZUB4";
     private static String sheOpenId = "oSrPm5qRZqUCbrF8wutwJPMx6YDk";
 
+    private static List<String> openIds = Arrays.asList("oSrPm5pct_BDqhKBjlAO5_BKZUB4", "oSrPm5qRZqUCbrF8wutwJPMx6YDk");
+//    private static List<String> openIds = Arrays.asList("oSrPm5pct_BDqhKBjlAO5_BKZUB4");
+
     private static String templateId = "PQfpcdgKJSkeKlthsd-xcAZh4QNLCShQn_BXhT5uhps";
 
 
@@ -50,6 +58,9 @@ public class WechatApp {
     }
 
     public static void main00() {
+        openIds.forEach(WechatApp::main000);
+    }
+    public static void main000(String openid) {
         String tokenStr = HttpUtil.get(TOKEN_URL);
         JSONObject jsonObjectToken = JSONObject.parseObject(tokenStr);
         String token = jsonObjectToken.getString("access_token");
@@ -63,8 +74,8 @@ public class WechatApp {
         Date pregnantDay = DateUtil.parseDateTime("2022-11-30 00:00:00");
         Date bornDay = DateUtil.parseDateTime("2023-09-06 00:00:00");
         WechatMsgTemplateMRequest<Object> templateMRequest = new WechatMsgTemplateMRequest<>();
-        templateMRequest.setTouser(myOpenId);
-//        templateMRequest.setTouser(sheOpenId);
+//        templateMRequest.setTouser(myOpenId);
+        templateMRequest.setTouser(openid);
         templateMRequest.setTemplate_id(templateId);
         JSONObject jsonObjectOut = new JSONObject();
         JSONObject jsonObjectDate = new JSONObject();
@@ -110,7 +121,7 @@ public class WechatApp {
         jsonObjectOut.putIfAbsent("born", jsonObjectBorn);
 
         JSONObject jsonObjectRandomQuotation = new JSONObject();
-        jsonObjectRandomQuotation.putIfAbsent("value", 456546);
+        jsonObjectRandomQuotation.putIfAbsent("value", ChickenSoupUtils.getChickenSoup());
         jsonObjectRandomQuotation.putIfAbsent("color", "#173177");
         jsonObjectOut.putIfAbsent("randomQuotation", jsonObjectRandomQuotation);
 

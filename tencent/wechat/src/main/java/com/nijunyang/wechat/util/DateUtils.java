@@ -1,4 +1,4 @@
-package com.nijunyang.wechat.pubsub;
+package com.nijunyang.wechat.util;
 
 import cn.hutool.core.date.LocalDateTimeUtil;
 
